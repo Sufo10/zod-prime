@@ -20,7 +20,10 @@ export interface EmailPasswordOptions {
  * const schema = emailPasswordSchema({ minPasswordLength: 10, requireSpecialChar: true });
  * schema.parse({ email: 'a@b.com', password: 'abc123!@#' });
  */
-export function emailPasswordSchema(options?: EmailPasswordOptions) {
+export function emailPasswordSchema(options?: EmailPasswordOptions): z.ZodObject<{
+  email: z.ZodString;
+  password: z.ZodString;
+}> {
   let password = z.string().min(options?.minPasswordLength || 8);
   if (options?.requireSpecialChar) {
     password = password.regex(/[^a-zA-Z0-9]/, 'Password must contain a special character');

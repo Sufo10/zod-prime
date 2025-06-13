@@ -9,7 +9,7 @@ import { ZodError } from 'zod';
  * @example
  * try { schema.parse(data); } catch (e) { const flat = flattenErrors(e); }
  */
-export function flattenErrors(error: ZodError) {
+export function flattenErrors(error: ZodError): Array<{ path: string; message: string }> {
   return error.errors.map((e) => ({
     path: e.path.map(String).join('.'),
     message: e.message,

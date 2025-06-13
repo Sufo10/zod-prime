@@ -27,7 +27,8 @@ export function zodToJsonSchema(schema: z.ZodTypeAny): object {
   if (schema instanceof z.ZodString) return { type: 'string' };
   if (schema instanceof z.ZodNumber) return { type: 'number' };
   if (schema instanceof z.ZodBoolean) return { type: 'boolean' };
-  if (schema instanceof z.ZodArray) return { type: 'array', items: zodToJsonSchema(schema.element) };
+  if (schema instanceof z.ZodArray)
+    return { type: 'array', items: zodToJsonSchema(schema.element) };
   if (
     schema._def?.typeName === z.ZodFirstPartyTypeKind.ZodOptional ||
     schema._def?.typeName === z.ZodFirstPartyTypeKind.ZodNullable

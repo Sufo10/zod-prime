@@ -7,10 +7,10 @@ export type DeepPartial<T> = T extends object
   ? T extends Array<infer U>
     ? Array<DeepPartial<U>>
     : T extends Map<infer MK, infer MV>
-    ? Map<MK, DeepPartial<MV>>
-    : T extends Record<string, any>
-    ? { [P in keyof T]?: DeepPartial<T[P]> }
-    : T
+      ? Map<MK, DeepPartial<MV>>
+      : T extends Record<string, any>
+        ? { [P in keyof T]?: DeepPartial<T[P]> }
+        : T
   : T;
 
 /**

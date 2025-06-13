@@ -10,6 +10,8 @@ describe('deepOmit', () => {
     });
     const omitted = deepOmit(schema, ['b', 'e']);
     expect(omitted.safeParse({ a: 'x', arr: [{ f: 'y' }] }).success).toBe(true);
-    expect(omitted.safeParse({ a: 'x', b: { c: 1, d: 'z' }, arr: [{ e: true, f: 'y' }] }).success).toBe(false);
+    expect(
+      omitted.safeParse({ a: 'x', b: { c: 1, d: 'z' }, arr: [{ e: true, f: 'y' }] }).success
+    ).toBe(false);
   });
 });

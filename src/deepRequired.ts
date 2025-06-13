@@ -7,10 +7,10 @@ export type DeepRequired<T> = T extends object
   ? T extends Array<infer U>
     ? Array<DeepRequired<U>>
     : T extends Map<infer MK, infer MV>
-    ? Map<MK, DeepRequired<MV>>
-    : T extends Record<string, any>
-    ? { [P in keyof T]-?: DeepRequired<T[P]> }
-    : T
+      ? Map<MK, DeepRequired<MV>>
+      : T extends Record<string, any>
+        ? { [P in keyof T]-?: DeepRequired<T[P]> }
+        : T
   : T;
 
 /**

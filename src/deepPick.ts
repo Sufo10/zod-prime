@@ -7,10 +7,10 @@ export type DeepPick<T, K extends string> = T extends object
   ? T extends Array<infer U>
     ? Array<DeepPick<U, K>>
     : T extends Map<infer MK, infer MV>
-    ? Map<MK, DeepPick<MV, K>>
-    : T extends Record<string, any>
-    ? { [P in Extract<keyof T, K>]: DeepPick<T[P], K> }
-    : T
+      ? Map<MK, DeepPick<MV, K>>
+      : T extends Record<string, any>
+        ? { [P in Extract<keyof T, K>]: DeepPick<T[P], K> }
+        : T
   : T;
 
 /**
@@ -43,7 +43,8 @@ export function deepPick<T extends ZodTypeAny, K extends string>(
         if (
           (nested instanceof z.ZodObject && Object.keys((nested as any).shape ?? {}).length > 0) ||
           (nested instanceof z.ZodArray &&
-            ((nested.element instanceof z.ZodObject && Object.keys((nested.element as any).shape ?? {}).length > 0) ||
+            ((nested.element instanceof z.ZodObject &&
+              Object.keys((nested.element as any).shape ?? {}).length > 0) ||
               !(nested.element instanceof z.ZodObject)))
         ) {
           newShape[key] = nested;
@@ -55,7 +56,10 @@ export function deepPick<T extends ZodTypeAny, K extends string>(
   if (schema instanceof z.ZodArray) {
     const pickedElement = deepPick(schema.element, keys);
     // Only keep array if the element is not an empty object
-    if (pickedElement instanceof z.ZodObject && Object.keys((pickedElement as any).shape ?? {}).length === 0) {
+    if (
+      pickedElement instanceof z.ZodObject &&
+      Object.keys((pickedElement as any).shape ?? {}).length === 0
+    ) {
       // If the picked element is an empty object, return an array of never
       return z.array(z.never()) as any;
     }

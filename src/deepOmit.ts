@@ -7,10 +7,10 @@ export type DeepOmit<T, K extends string> = T extends object
   ? T extends Array<infer U>
     ? Array<DeepOmit<U, K>>
     : T extends Map<infer MK, infer MV>
-    ? Map<MK, DeepOmit<MV, K>>
-    : T extends Record<string, any>
-    ? { [P in Exclude<keyof T, K>]: DeepOmit<T[P], K> }
-    : T
+      ? Map<MK, DeepOmit<MV, K>>
+      : T extends Record<string, any>
+        ? { [P in Exclude<keyof T, K>]: DeepOmit<T[P], K> }
+        : T
   : T;
 
 /**

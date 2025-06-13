@@ -1,4 +1,11 @@
-import { deepPartial, deepRequired, emailPasswordSchema, flattenErrors, refineObject, smartEnum } from '../src';
+import {
+  deepPartial,
+  deepRequired,
+  emailPasswordSchema,
+  flattenErrors,
+  refineObject,
+  smartEnum,
+} from '../src';
 
 describe('zod-prime index exports', () => {
   it('exports all utilities', () => {

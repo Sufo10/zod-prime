@@ -12,6 +12,8 @@ describe('deepPartial', () => {
     });
     const partial = deepPartial(schema);
     expect(() => partial.parse({})).not.toThrow();
-    expect(() => partial.parse({ foo: {}, arr: [{}], tuple: [undefined, {}], rec: {}, map: new Map() })).not.toThrow();
+    expect(() =>
+      partial.parse({ foo: {}, arr: [{}], tuple: [undefined, {}], rec: {}, map: new Map() })
+    ).not.toThrow();
   });
 });
