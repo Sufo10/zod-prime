@@ -7,11 +7,11 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zod-prime/zod-prime.git"
+    "url": "git@github.com:Sufo10/zod-prime.git"
   },
-  "homepage": "https://github.com/zod-prime/zod-prime#readme",
+  "homepage": "https://github.com/Sufo10/zod-prime#readme",
   "bugs": {
-    "url": "https://github.com/zod-prime/zod-prime/issues"
+    "url": "https://github.com/Sufo10/zod-prime/issues"
   },
   "files": [
     "dist"
