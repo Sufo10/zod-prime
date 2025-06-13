@@ -1,0 +1,37 @@
+# Source and tests
+src/
+test/
+examples/
+*.test.ts
+coverage/
+
+# Config and CI
+.husky/
+.github/
+.vscode/
+.editorconfig
+.eslintrc*
+.prettierrc*
+.gitignore
+.npmignore
+tsconfig.json
+vitest.config.ts
+
+# Documentation
+docs/
+*.md
+!README.md
+!CHANGELOG.md
+!LICENSE
+
+# Development
+*.log
+.DS_Store
+.env*
+*.tsbuildinfo
+node_modules/
+
+# IDE
+.idea/
+*.swp
+*.swo
