@@ -9,7 +9,7 @@
 <p align="center">
   <b>Type-safe, production-grade Zod schema utilities for modern TypeScript apps.</b><br>
   <a href="https://www.npmjs.com/package/zod-prime"><img src="https://img.shields.io/npm/v/zod-prime.svg?style=flat-square" alt="npm version"></a>
-  <a href="https://github.com/Sufo10/zod-prime/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Sufo10/zod-prime?style=flat-square" alt="MIT License"></a>
+  <a href="https://github.com/Sufo10/zod-prime/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Sufo10/zod-prime.svg?style=flat-square" alt="MIT License"></a>
 </p>
 
 `zod-prime` supercharges your Zod schemas with deep partial/required, recursive omit/pick, error flattening, cross-field validation, JSON Schema conversion, and more. All utilities are fully type-safe and ready for production.

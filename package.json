@@ -1,6 +1,6 @@
 {
   "name": "zod-prime",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Enhance Zod with real-world schema utilities for production-grade apps.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
